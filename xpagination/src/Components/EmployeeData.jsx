@@ -15,7 +15,7 @@ const EmployeeData = () => {
                 setTotalPages(Math.ceil(totalEmployees / 10));
             }
             catch(err){
-                alert("failed to fatch data",err)
+                alert("failed to fetch data")
             }
         }
         fetchData()
