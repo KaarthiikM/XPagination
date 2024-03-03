@@ -15,7 +15,7 @@ const EmployeeData = () => {
                 setTotalPages(Math.ceil(totalEmployees / 10));
             }
             catch(err){
-                console.error("Failed to fatch data",err)
+                alert("Failed to fatch data",err)
             }
         }
         fetchData()
@@ -41,13 +41,15 @@ const EmployeeData = () => {
         <h1>Employee Data Table</h1>
         <div>
             <table>
+                <thead>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
                 </tr>
-                
+                </thead>
+                <tbody>
                     {empData.slice(startIndex, endIndex).map((employee)=>(
                         <tr>
                             <td>{employee.id}</td>
@@ -56,7 +58,7 @@ const EmployeeData = () => {
                             <td>{employee.role}</td>
                         </tr>
                     ))}
-                
+                </tbody>
             </table>
         </div>
         <div>
